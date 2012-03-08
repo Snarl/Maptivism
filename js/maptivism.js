@@ -5,7 +5,7 @@ var me = null;
 var followMe = true;
 
 function init_map() {
-	getTickerRSS();
+	/* getTickerRSS(); this needs to not depend on sukey php */
 	map = new google.maps.Map(
 		document.getElementById('map'), {
 			zoom: 16,
@@ -22,16 +22,12 @@ function init_map() {
 			'212377250988774351922.0004ba7504886c2262b6a'] /* "Showers.kml" */
 /* sotiri's advice: view-source:http://wind.wiran.gr/?page=pickup&subpage=gmap&object_lat=form_node.elements%5B%27nodes__latitude%27%5D&object_lon=form_node.elements%5B%27nodes__longitude%27%5D  */
 
-	var kml_layers = [];
-	msids.forEach(function(msid) {  + }, msid )
-	
-	for (msid in msids) {
-		kml_layers.push(new google.maps.KmlLayer('http://maps.google.co.uk/maps/ms?authuser=0&hl=en&ie=UTF8&msa=0&output=kml&msid=' + msid',
-								{ map: map,
-								  preserveViewport: true,
-								  clickable: true }));
-	for (l in kml_layers) {
-		l.setMap(map);
+	for (m in msids) {
+		new google.maps.KmlLayer('http://maps.google.co.uk/maps/ms?authuser=0&hl=en&ie=UTF8&msa=0&output=kml&msid=' + msids[m],
+		{ map: map, /* this argument renders the layer to the map */
+		  preserveViewport: false, /* because area will inevitably eventually be large */
+		  clickable: true,
+		  suppressInfoWindows: false });
 	}
 	
 	if (navigator.geolocation) {
