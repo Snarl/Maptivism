@@ -8,9 +8,12 @@
 	<link rel="stylesheet" href="../css/master.css" type="text/css" media="screen" charset="utf-8">
 	<script type="text/javascript" src="../js/jquery-1.4.4.js"></script>
 	<script type="text/javascript" src="../js/ticker-1.2.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="../js/maptivism.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			getTickerRSS();
+			init_map();
 		});
 	</script>
 	<title>Maptivism | Cartography is Cool.</title>
@@ -20,9 +23,17 @@
 		<div id="ticker"></div>
 	</div>
 	<div id="occupy" onclick="location.href='http://map.occupylsx.org/';"></div>
-		<div align="center">
-		<p>Coming soon!</p>
-			<p>Maptivism &#169;&#824; 201.</p>
+		<div id="update">
+			<div id="map" style="left:0; width:50%; position:absolute"></div>
+			<div id="form" style="left:50%; width:50%; position:absolute">the form</div>
+<? https://docs.google.com/spreadsheet/gform?key=0AmzeimVR8QSRdElFLVo1c2FoMVdEX09rZnB1dl9icGc -- this is the actual form >
+
+<? http://googledocs.blogspot.com/2008/05/embed-your-forms.html >
+<? http://code.google.com/apis/maps/documentation/javascript/reference.html#KmlLayer >
+<? http://code.google.com/apis/maps/documentation/javascript/reference.html#Marker >
+		</div>
+		<div id="footer" align="center">
+			<p>Maptivism &#169;&#824; 2012.</p>
 		</div>
 </body>
 </html>

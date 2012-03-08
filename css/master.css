@@ -137,3 +137,6 @@ width:300px;
 text-align:left;
 }
 
+#footer{
+visibility:hidden; /* until sticking it to the bottom can happen properly*/
+}
